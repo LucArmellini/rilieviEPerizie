@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rilievi e Perizie - Login</title>
+    <link rel="icon" href="img/icoVallauri.png" type="image/png" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="login.css" />
+
+    <script src="https://accounts.google.com/gsi/client" defer></script>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./axios@1.1.2.min.js"></script>
+    <script src="./libreria.js"></script>
+    <script src="./login.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-primary text-white text-center py-4">
+                        <img src="img/logo.png" width="80" class="rounded-circle mb-3 bg-white p-2" />
+                        <h4 class="mb-0">Rilievi e Perizie</h4>
+                        <p class="small mb-0">IIS Vallauri - Fossano</p>
+                    </div>
+                    
+                    <div class="card-body p-4">
+                        <form id="frmLogin">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-primary text-white">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="usr" placeholder="Username" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-primary text-white">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Password" />
+                                </div>
+                            </div>
+
+                            <div class="alert alert-danger alert-dismissible fade show d-none" id="lblErrore">
+                                <button type="button" class="close">&times;</button>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <strong>Attenzione!</strong> Username o Password non validi
+                            </div>
+
+                            <button type="button" class="btn btn-primary btn-block py-2 mb-3" id="btnLogin">
+                                <i class="fas fa-sign-in-alt mr-2"></i>ACCEDI
+                            </button>
+                            
+                            <div id="googleDiv" class="text-center mb-3"></div>
+                            
+                            <div class="text-center">
+                                <a href="#" class="btn btn-link text-primary">Registrati</a>
+                                <span class="text-muted mx-2">|</span>
+                                <a href="#" class="btn btn-link text-primary" id="btnPwdDimenticata">Password dimenticata?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="changePasswordModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cambia Password</h5>
+                </div>
+                <div class="modal-body">
+                    <p>È necessario cambiare la password al primo accesso.</p>
+                    <div class="form-group">
+                        <label>Nuova Password</label>
+                        <input type="password" class="form-control" id="newPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Conferma Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnChangePassword">
+                        Salva Password
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

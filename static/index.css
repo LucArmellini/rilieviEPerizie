@@ -1,0 +1,150 @@
+.container{
+	padding-top:15px;
+	/* visibility:hidden;  */
+}
+
+#btnLogout{
+	margin-top:18px;	
+}
+
+#frmInvia{
+	border:1px solid #AAA; 
+	background-color:#F2F2FF; 
+	padding:12px;	
+	margin:12px 0;
+}
+
+#frmInvia input{
+	padding:7px;
+	width:100%;
+	font-size:0.88em;
+	vertical-align:middle;
+
+}
+#frmInvia label{
+	justify-content:left;
+	vertical-align:middle;
+}
+
+#frmInvia button{
+	vertical-align:middle;
+}
+
+#tabMail{
+	border:2px solid #AAA; 
+	background-color:#F2F2FF; 
+	margin-top:20px;
+	margin-bottom:0;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+#map {
+    min-height: 600px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.marker-popup img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.marker-popup {
+    max-width: 300px;
+    padding: 10px;
+}
+
+.perizia-image-container {
+    position: relative;
+    margin: 10px;
+}
+
+.perizia-image-container img {
+    max-width: 150px;
+    border-radius: 4px;
+}
+
+.perizia-image-comment {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+#adminSection {
+    border-top: 1px solid #dee2e6;
+    padding-top: 15px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #495057;
+}
+
+/* terminale md */
+@media  (min-width:768px) and (max-width:992px){ 
+	#frmInvia input{
+		width:120%;
+	}
+	#frmInvia div:nth-of-type(3) input{
+		width:105%;
+	}
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #map {
+        height: 400px;
+    }
+    
+    .col-md-3 {
+        margin-bottom: 20px;
+    }
+}
+
+/* Stili per il marker della sede */
+.sede-marker {
+    background-color: #dc3545;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.sede-marker i {
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.sede-popup {
+    text-align: center;
+    padding: 5px;
+}
+
+.sede-popup h6 {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.sede-popup i {
+    color: #dc3545;
+}
+
+

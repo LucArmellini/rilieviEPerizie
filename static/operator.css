@@ -1,0 +1,218 @@
+/* Main container */
+.container-fluid {
+    max-width: 1400px;
+}
+
+/* Map styling */
+#map {
+    height: calc(100vh - 180px);
+    min-height: 400px;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Form styling */
+.form-group label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.form-group .text-muted {
+    font-size: 0.875rem;
+}
+
+/* Image preview */
+.preview-img {
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Custom file input */
+.custom-file-label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Coordinates alert */
+#coordinates {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+#coordinates span {
+    font-family: monospace;
+    font-weight: 500;
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 8px;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #map {
+        height: 400px;
+        margin-top: 1rem;
+    }
+    
+    .container-fluid {
+        padding: 1rem;
+    }
+    
+    .preview-img {
+        height: 120px;
+    }
+}
+
+/* Animations */
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Button styling */
+.btn-primary {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Icons in labels */
+.form-group label i {
+    margin-right: 0.5rem;
+    color: #007bff;
+}
+
+/* Textarea styling */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Add these styles for perizia popups and modal */
+.perizia-popup {
+    max-width: 300px;
+}
+
+.perizia-popup img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.perizia-image {
+    border: 1px solid #dee2e6;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.foto-item {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.foto-item img {
+    max-height: 200px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#editPeriziaModal .modal-lg {
+    max-width: 800px;
+}
+
+.foto-container {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* Aggiungi questi stili per il popup della sede */
+.sede-popup {
+    text-align: center;
+    padding: 5px;
+}
+
+.sede-popup h6 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.sede-popup i {
+    color: #0056b3;
+}
+
+/* Stile per distinguere il popup della sede */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+
+.sede-popup + .leaflet-popup-tip-container .leaflet-popup-tip {
+    background-color: #f8f9fa;
+}
+
+/* Stile per il marker della sede */
+.sede-marker {
+    background-color: #dc3545;  /* Rosso Bootstrap */
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.sede-marker i {
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Stile per il popup della sede */
+.sede-popup {
+    text-align: center;
+    padding: 5px;
+}
+
+.sede-popup h6 {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.sede-popup i {
+    color: #dc3545;
+}
