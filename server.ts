@@ -24,7 +24,7 @@ dotenv.config({ path: '.env' });
 const connectionString = process.env.connectionStringAtlas;
 const DB_NAME = process.env.dbName;
 const PORT = 3000; // Change to HTTP port 3000
-const tokenExpiresIn = 14400; // invece di 240
+const tokenExpiresIn = 240; // invece di 240
 // const auth = JSON.parse(process.env.auth);
 
 // Configura Cloudinary con le credenziali dal file .env
@@ -108,6 +108,8 @@ app.use('/', (req: any, res: any, next: any) => {
 //6. CORS
 const whitelist = [
   'http://localhost:3000',
+  'https://localhost:3001',
+  'http://localhost:8100',
   'http://localhost:4200', // server angular
   'https://cordovaapp' // porta 443 (default)
 ];
@@ -123,8 +125,11 @@ const corsOptions = {
       return callback(new Error(msg), false);
     } else return callback(null, true);
   },
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
+
 app.use('/', cors(corsOptions));
 
 // 7. Gestione login
@@ -140,10 +145,27 @@ const cookiesOptions: CookieOptions = {
 // Modifica la route di login per controllare se è necessario cambiare la password
 app.post('/api/login', async (req: Request, res: Response) => {
     try {
+        console.log("Login attempt:", {
+            username: req.body.username,
+            receivedPassword: req.body.password
+        });
+
         const collection = mongoClient.db(DB_NAME).collection('utenti');
         const user = await collection.findOne({ username: req.body.username });
 
-        if (!user || user.password !== req.body.password) {
+        if (!user) {
+            console.log("User not found");
+            res.status(401).send("Username o password non validi");
+            return;
+        }
+
+        console.log("User found:", {
+            username: user.username,
+            storedPassword: user.password
+        });
+
+        if (user.password !== req.body.password) {
+            console.log("Password mismatch");
             res.status(401).send("Username o password non validi");
             return;
         }
